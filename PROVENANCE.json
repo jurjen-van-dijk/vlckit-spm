@@ -8,8 +8,8 @@
     },
     {
       "name": "VLCKit-source-3.6.0-autosave.1.tar.gz",
-      "bytes": 195747271,
-      "sha256": "9b8878e3b86ac98d8d658b42e6f8f306291f168ffc218da1190a2ae5652aece3"
+      "bytes": 195749782,
+      "sha256": "070c29003be8c497d823d88c99bcd47b93995f5f3322edd057e6bdb79657961c"
     }
   ],
   "framework": {
@@ -21,7 +21,7 @@
     "architecture": "arm64",
     "minimum_macos": "26.5"
   },
-  "source_snapshot": "Actual tracked VLCKit and fixed VLC source, including current zlib/png recipes, three extra reviewed patches, all retained contrib tarballs and Autoconf 2.71 input.",
+  "source_snapshot": "Actual tracked VLCKit and fixed VLC source, including current zlib/png recipes, three extra reviewed patches, all retained contrib tarballs and Autoconf 2.71 input. Includes exact build wrappers and their environment/tool-selection records.",
   "privacy_note": "Native DWARF debug symbols and historical build scripts contain local build paths. No MediaDesk source, test fixtures/results, profiles, credentials or private keys are included.",
   "upstream_package_revision": "e932bbd488872fdb74f6654d28c2f291eae03daf",
   "vlckit_revision": "c73b779f2d1e3d3c1598a27811679ce2c1a005db",
