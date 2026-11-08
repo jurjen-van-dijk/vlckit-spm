@@ -1,0 +1,35 @@
+{
+  "tag": "3.6.0-autosave.1",
+  "assets": [
+    {
+      "name": "VLCKit-macos-arm64-3.6.0-autosave.1.xcframework.zip",
+      "bytes": 60533197,
+      "sha256": "89687e3ce1afd9956d3e53d09c940c4fb08484796aaf4a7d10d20c0da471b65f"
+    },
+    {
+      "name": "VLCKit-source-3.6.0-autosave.1.tar.gz",
+      "bytes": 195747271,
+      "sha256": "9b8878e3b86ac98d8d658b42e6f8f306291f168ffc218da1190a2ae5652aece3"
+    }
+  ],
+  "framework": {
+    "files": 60,
+    "symlinks": 6,
+    "unchanged": true,
+    "binary_sha256": "ec4bc5e6fac8037179f57b20de2d8aa08ee5248c9c9f9971859a4d9b2cb06632",
+    "uuid": "C5814143-306D-3B12-8950-0827C422CA3F",
+    "architecture": "arm64",
+    "minimum_macos": "26.5"
+  },
+  "source_snapshot": "Actual tracked VLCKit and fixed VLC source, including current zlib/png recipes, three extra reviewed patches, all retained contrib tarballs and Autoconf 2.71 input.",
+  "privacy_note": "Native DWARF debug symbols and historical build scripts contain local build paths. No MediaDesk source, test fixtures/results, profiles, credentials or private keys are included.",
+  "upstream_package_revision": "e932bbd488872fdb74f6654d28c2f291eae03daf",
+  "vlckit_revision": "c73b779f2d1e3d3c1598a27811679ce2c1a005db",
+  "vlc_base_revision": "dd8bfdbabe8ae3974ca3864ad3125879f523e3a2",
+  "vlc_fixed_revision": "ea86f71456e52699cea9ef2db7c156f0e8616511",
+  "patches": {
+    "autosave": "50ce34f4e88f097c58a8478d74c1c786f951ad33984ea543f9034421c482098f",
+    "zlib": "3942f875587c46bffdbd5b299865f6568ac4f5b312a31e8a0da22198391bb186",
+    "libpng": "f0cfaf5eb8842c89ca62ee1e4d2ed0f2fb00db26a997180c6e7bda9b08d63e78"
+  }
+}

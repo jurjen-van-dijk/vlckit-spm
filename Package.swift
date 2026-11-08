@@ -1,42 +1,30 @@
 // swift-tools-version: 5.7
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+//
+//  Package.swift
+//  MediaDesk
+//
+//  Created by Jurjen van Dijk & Codex on 14/01/2023.
+//  Copyright © 2026 From Beyond. All rights reserved.
+//
+// Adapted from tylerjonesio/vlckit-spm at e932bbd under LGPL-2.1.
+// See LICENSE for the retained upstream license.
 
 import PackageDescription
 
-let vlcBinary = Target.binaryTarget(name: "VLCKit-all", url: "https://github.com/tylerjonesio/vlckit-spm/releases/download/3.6.0/VLCKit-all.xcframework.zip", checksum: "5da4747e001900bbb4153f58db2be4695096c9c2350aea00376ad67b39c053f6")
-
 let package = Package(
     name: "vlckit-spm",
-    platforms: [.macOS(.v10_13), .iOS(.v11), .tvOS(.v11)],
-    products: [
-        .library(
-            name: "VLCKitSPM",
-            targets: ["VLCKitSPM"]),
-    ],
-    dependencies: [],
+    platforms: [.macOS("26.5")],
+    products: [.library(name: "VLCKitSPM", targets: ["VLCKitSPM"])],
     targets: [
-        vlcBinary,
+        .binaryTarget(
+            name: "VLCKit",
+            url: "https://github.com/jurjen-van-dijk/vlckit-spm/releases/download/3.6.0-autosave.1/VLCKit-macos-arm64-3.6.0-autosave.1.xcframework.zip",
+            checksum: "89687e3ce1afd9956d3e53d09c940c4fb08484796aaf4a7d10d20c0da471b65f"
+        ),
         .target(
             name: "VLCKitSPM",
-            dependencies: [
-                .target(name: "VLCKit-all")
-            ], linkerSettings: [
-                .linkedFramework("QuartzCore", .when(platforms: [.iOS])),
-                .linkedFramework("CoreText", .when(platforms: [.iOS, .tvOS])),
-                .linkedFramework("AVFoundation", .when(platforms: [.iOS, .tvOS])),
-                .linkedFramework("Security", .when(platforms: [.iOS])),
-                .linkedFramework("CFNetwork", .when(platforms: [.iOS])),
-                .linkedFramework("AudioToolbox", .when(platforms: [.iOS, .tvOS])),
-                .linkedFramework("OpenGLES", .when(platforms: [.iOS, .tvOS])),
-                .linkedFramework("CoreGraphics", .when(platforms: [.iOS])),
-                .linkedFramework("VideoToolbox", .when(platforms: [.iOS, .tvOS])),
-                .linkedFramework("CoreMedia", .when(platforms: [.iOS, .tvOS])),
-                .linkedLibrary("c++", .when(platforms: [.iOS, .tvOS])),
-                .linkedLibrary("xml2", .when(platforms: [.iOS, .tvOS])),
-                .linkedLibrary("z", .when(platforms: [.iOS, .tvOS])),
-                .linkedLibrary("bz2", .when(platforms: [.iOS, .tvOS])),
-                .linkedFramework("Foundation", .when(platforms: [.macOS])),
-                .linkedLibrary("iconv")
-            ]),
+            dependencies: [.target(name: "VLCKit")],
+            linkerSettings: [.linkedFramework("Foundation"), .linkedLibrary("iconv")]
+        )
     ]
 )
